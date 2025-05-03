@@ -1,43 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chess Team Superhero Board</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chessboard and Players</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-      <div class="chessboard" id="chessboard"></div>
-  
-      <div class="avatar-row">
-        <div class="avatar-block">
-          <img src="images/black_panther.png" class="avatar-img" />
-          <div class="avatar-name">Φώντας</div>
-        </div>
-        <div class="avatar-block">
-          <img src="images/ironman.png" class="avatar-img" />
-          <div class="avatar-name">Παύλος</div>
-        </div>
-        <div class="avatar-block">
-          <img src="images/batman.png" class="avatar-img" />
-          <div class="avatar-name">Γιώργος</div>
-        </div>
-        <div class="avatar-block">
-          <img src="images/raya.png" class="avatar-img" />
-          <div class="avatar-name">Μαρίλια</div>
-        </div>
-        <div class="avatar-block">
-          <img src="images/ghost_spider.png" class="avatar-img" />
-          <div class="avatar-name">Δέσποινα</div>
-        </div>
-        <div class="avatar-block">
-          <img src="images/mulan.png" class="avatar-img" />
-          <div class="avatar-name">Άλκηστη</div>
-        </div>
-      </div>
+  <div class="container">
+    <!-- Chessboard Section -->
+    <div id="chessboard" class="chessboard"></div>
+
+    <!-- Avatar Section -->
+    <div class="avatars">
+      <div class="avatar-row"></div>
     </div>
-  
-    <script src="script.js"></script>
-  </body>  
+
+    <!-- Scoreboard Section -->
+    <div class="scoreboard"></div>
+
+    <!-- Scale Section -->
+    <div id="scale-container" class="scale-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>

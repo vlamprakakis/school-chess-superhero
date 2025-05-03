@@ -1,132 +1,114 @@
+/* Basic Styles for the Chessboard and Layout */
 body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #eee;
-    margin: 0;
-    font-family: sans-serif;
-  }
-  
-  .chessboard {
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    justify-content: space-between; /* Add space between sections */
+    align-items: flex-start; /* Align items to the top */
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full width */
+    padding: 20px; /* Optional: Add padding around the container */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+/* Left side container (for score table and avatars) */
+.left-container {
+    width: 30%; /* Adjust as needed */
+    padding: 10px;
+}
+
+/* Right side container (for chessboard) */
+.right-container {
+    width: 65%; /* Adjust as needed */
+    padding: 10px;
+    position: relative; /* Allow arrows to overlap the chessboard */
+}
+
+/* Chessboard styling */
+#chessboard {
     display: grid;
-    grid-template-columns: repeat(8, 80px);  /* was 60px */
-    grid-template-rows: repeat(8, 80px);     /* was 60px */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border: 4px solid #333;
-  }
-  
-  .square {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .square.light {
-    background-color: #f0d9b5; /* light wood */
-  }
-  
-  .square.dark {
-    background-color: #b58863; /* dark wood */
-  }
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 0;
+    width: 400px; /* Set a fixed width */
+    height: 400px; /* Set a fixed height to make it square */
+    position: relative; /* So arrows can overlap */
+    border: 1px solid black;
+}
 
-  .avatar {
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    box-shadow: 0 0 4px rgba(0,0,0,0.3);
-  }  
-  
-  .square-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 14px;
-    color: #000;
-  }
+/* Squares styling */
+.square {
+    width: 100%;
+    height: 100%;
+}
 
-  #chessboard {
-    display: grid;
-    grid-template-columns: repeat(8, 80px);  /* was 60px */
-    grid-template-rows: repeat(8, 80px);     /* was 60px */
-    direction: ltr;
-    transform: rotateX(180deg);
-  }
-  
-  .square {
-    transform: rotateX(180deg); /* flip content back upright */
-  }
+.light {
+    background-color: #f0d9b5;
+}
 
-  .avatar-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
-  }
-  
-  .avatar-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100px;
-  }
-  
-  .avatar-img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    border-radius: 50%;
-    border: 2px solid #555;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  }
-  
-  .avatar-name {
-    margin-top: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .avatar-row {
+.dark {
+    background-color: #b58863;
+}
+
+/* Arrow layer styling */
+.arrow-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for the arrows */
+.arrow {
+    position: absolute;
+    bottom: 0;
+    width: 10px; /* Adjust as needed */
+    background-color: rgba(255, 0, 0, 0.5); /* Example color */
+}
+
+/* Score table */
+.rating-table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
+}
+
+.rating-table th, .rating-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.rating-table input {
+    width: 50px;
+}
+
+/* Styling for the avatar row */
+.avatar-row {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .avatar-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .avatar-img {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.avatar-block {
+    text-align: center;
+    margin: 10px;
+}
+
+.avatar-img {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    border: 2px solid #333;
-    background-color: white;
-  }
-  
-  .avatar-name {
-    margin-top: 5px;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  
-  
-  
+}

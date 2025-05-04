@@ -8,19 +8,24 @@
 </head>
 <body>
   <div class="container">
-    <!-- Chessboard Section -->
-    <div id="chessboard" class="chessboard"></div>
+    <!-- Left Section: Chessboard and Avatars -->
+    <div class="left-container">
+      <!-- Chessboard Section -->
+      <div class="chessboard-wrapper">
+        <div id="chessboard" class="chessboard"></div>
+        <div class="arrow-layer"></div>
+      </div>
 
-    <!-- Avatar Section -->
-    <div class="avatars">
-      <div class="avatar-row"></div>
+      <!-- Avatar Row -->
+      <div class="avatar-row">
+        <!-- Dynamic avatars will be added here by JavaScript -->
+      </div>
     </div>
 
-    <!-- Scoreboard Section -->
-    <div class="scoreboard"></div>
-
-    <!-- Scale Section -->
-    <div id="scale-container" class="scale-container"></div>
+    <!-- Right Section: Scoreboard -->
+    <div class="right-container">
+      <div class="scoreboard"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>

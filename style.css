@@ -1,114 +1,74 @@
-/* Basic Styles for the Chessboard and Layout */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
-
 .container {
     display: flex;
-    flex-direction: row; /* Align items horizontally */
+    flex-direction: row; /* Align left and right sections horizontally */
     justify-content: space-between; /* Add space between sections */
     align-items: flex-start; /* Align items to the top */
-    height: 100vh; /* Full viewport height */
-    width: 100%; /* Full width */
-    padding: 20px; /* Optional: Add padding around the container */
-    box-sizing: border-box; /* Include padding in width/height calculations */
+    width: 100%;
+    height: 100vh; /* Ensure it spans the full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
-/* Left side container (for score table and avatars) */
 .left-container {
-    width: 30%; /* Adjust as needed */
-    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Stack chessboard and avatars vertically */
+    width: 70%; /* Adjust width as needed */
+    padding-right: 20px;
+    height: auto; /* Allow height to adjust dynamically */
 }
 
-/* Right side container (for chessboard) */
 .right-container {
-    width: 65%; /* Adjust as needed */
+    width: 30%; /* Adjust width as needed */
     padding: 10px;
-    position: relative; /* Allow arrows to overlap the chessboard */
+    min-width: 250px; /* Ensure the scoreboard doesn't shrink too much */
 }
 
-/* Chessboard styling */
 #chessboard {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
     gap: 0;
-    width: 400px; /* Set a fixed width */
-    height: 400px; /* Set a fixed height to make it square */
-    position: relative; /* So arrows can overlap */
+    width: 100%; /* Make it responsive */
+    max-width: 600px; /* Set a maximum size */
+    height: auto; /* Maintain aspect ratio */
+    aspect-ratio: 1 / 1; /* Ensure it stays square */
+    position: relative;
     border: 1px solid black;
+    background-color: #fff; /* Optional: Add a background color for visibility */
 }
 
-/* Squares styling */
 .square {
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Automatically adjust to fit the grid cell */
+    height: 100%; /* Automatically adjust to fit the grid cell */
 }
 
-.light {
-    background-color: #f0d9b5;
+.square.light {
+    background-color: #f0d9b5; /* Light square color */
 }
 
-.dark {
-    background-color: #b58863;
+.square.dark {
+    background-color: #b58863; /* Dark square color */
 }
-
-/* Arrow layer styling */
-.arrow-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Styling for the arrows */
-.arrow {
-    position: absolute;
-    bottom: 0;
-    width: 10px; /* Adjust as needed */
-    background-color: rgba(255, 0, 0, 0.5); /* Example color */
-}
-
-/* Score table */
-.rating-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.rating-table th, .rating-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center;
-}
-
-.rating-table input {
-    width: 50px;
-}
-
-/* Styling for the avatar row */
 .avatar-row {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.avatar-block {
-    text-align: center;
-    margin: 10px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center avatars when they wrap */
+    padding: 20px;
+    background-color: #f9f9f9; /* Optional: Add a background color */
+    border-top: 1px solid #ddd; /* Optional: Add a top border for separation */
+    position: relative; /* Position it relative to the layout */
+    margin: 0 auto; /* Center it horizontally */
+    width: 100%; /* Make it span the full width of the page */
+    box-sizing: border-box; /* Include padding in width calculations */
+    gap: 10px; /* Add spacing between avatars */
 }
 
 .avatar-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 80px; /* Set a fixed width */
+    height: 80px; /* Set a fixed height */
+    max-width: 100px; /* Optional: Limit the maximum size */
+    max-height: 100px; /* Optional: Limit the maximum size */
+    border-radius: 50%; /* Keep the circular shape */
+    background-color: #ccc; /* Optional: Add a background color for visibility */
 }

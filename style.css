@@ -7,21 +7,21 @@
     height: 100vh; /* Ensure it spans the full viewport height */
     padding: 20px;
     box-sizing: border-box;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: nowrap; /* no wrapping for smaller screens*/
 }
 
 .left-container {
     display: flex;
     flex-direction: column; /* Stack chessboard and avatars vertically */
-    width: 70%; /* Adjust width as needed */
+    width: 60%; /* Adjust width as needed */
     padding-right: 20px;
     height: auto; /* Allow height to adjust dynamically */
 }
 
 .right-container {
-    width: 30%; /* Adjust width as needed */
+    width: 40%; /* Adjust width as needed */
     padding: 10px;
-    min-width: 250px; /* Ensure the scoreboard doesn't shrink too much */
+    min-width: 300px; /* Ensure the scoreboard doesn't shrink too much */
 }
 
 #chessboard {
@@ -53,7 +53,7 @@
 .avatar-row {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: center; /* Center avatars when they wrap */
+    justify-content: flex-start; /* Center avatars when they wrap */
     padding: 20px;
     background-color: #f9f9f9; /* Optional: Add a background color */
     border-top: 1px solid #ddd; /* Optional: Add a top border for separation */
@@ -64,11 +64,33 @@
     gap: 10px; /* Add spacing between avatars */
 }
 
+.avatar-block div:last-child {
+  font-size: 1.3rem;     /* or bigger */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px;
+}
+
 .avatar-img {
-    width: 80px; /* Set a fixed width */
-    height: 80px; /* Set a fixed height */
+    width: 120px; /* Set a fixed width */
+    height: 120px; /* Set a fixed height */
     max-width: 100px; /* Optional: Limit the maximum size */
     max-height: 100px; /* Optional: Limit the maximum size */
     border-radius: 50%; /* Keep the circular shape */
     background-color: #ccc; /* Optional: Add a background color for visibility */
+}
+
+.rating-table td, .rating-table th {
+  font-size: 1.5rem;
+  padding: 12px;
+}
+
+.rating-table input {
+  font-size: 1rem;
+  width: 70px;
+}
+
+.rating-table button {
+  font-size: 1rem;
+  padding: 6px 10px;
 }

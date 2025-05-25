@@ -50,6 +50,7 @@
 .square.dark {
     background-color: #b58863; /* Dark square color */
 }
+
 .avatar-row {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
@@ -74,8 +75,8 @@
 .avatar-img {
     width: 120px; /* Set a fixed width */
     height: 120px; /* Set a fixed height */
-    max-width: 100px; /* Optional: Limit the maximum size */
-    max-height: 100px; /* Optional: Limit the maximum size */
+    /* max-width: 100px; /* Optional: Limit the maximum size */
+    /* max-height: 100px; /* Optional: Limit the maximum size */
     border-radius: 50%; /* Keep the circular shape */
     background-color: #ccc; /* Optional: Add a background color for visibility */
 }
@@ -93,4 +94,128 @@
 .rating-table button {
   font-size: 1rem;
   padding: 6px 10px;
+}
+
+.avatar-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  width: 120px; /* match the avatar-img width */
+}
+
+.progress-bar-container {
+  width: 80px;
+  height: 8px;
+  background-color: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;  
+  width: 0%;
+  transition: width 0.5s ease;
+  border-radius: 4px; 
+}
+
+.scale-container {
+  width: 100%;
+  max-width: 600px;
+  height: 60px;
+  margin: 10px 0;
+  position: relative;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.score-scale {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scale-line {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: #666;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scale-number {
+  position: absolute;
+  font-size: 12px;
+  color: #666;
+  top: -25px;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
+
+.arrow-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.arrow {
+  position: absolute;
+  width: 8px;
+  height: 20px;
+  border-radius: 4px;
+  transition: left 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.arrow::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 5px solid inherit;
+}
+
+.chessboard-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Color indicator styles for avatar names */
+.name-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.color-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  flex-shrink: 0;
 }
